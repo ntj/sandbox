@@ -13,6 +13,7 @@ def getRandomColor():
     return colors[index]
 
 def zeichneDreieck(pts, color, xShift = 0, yShift = 0):
+    print("zeichne {0}".format(color))
     path = draw.Path(stroke_width=0.5, stroke='green',
               fill=color, fill_opacity=0.6)
     
@@ -23,6 +24,11 @@ def zeichneDreieck(pts, color, xShift = 0, yShift = 0):
         path.l(pts[i][0] -  pts[i-1][0], pts[i][1] - pts[i-1][1])
     path.Z()
     d.append(path)
+
+def drawTriangles(triangles):
+    for i, t in enumerate(triangles):
+        index = random.randint(0,6)
+        zeichneDreieck(t, colors[i % 9])
     
 def switchCoords(arr):
     result = np.array([[a[1],a[0]] for a in arr])
@@ -39,7 +45,7 @@ def generateClones(pts):
     pts9 = pts4.dot([[1,0],[0,-1]])
     pts10 = (pts - [50,0]).dot([[-1,0],[0,1]]) + [50,0]
     pts11 = (pts2 + [50,0]).dot([[-1,0],[0,1]]) - [50,0]
-    pts3 = pts9.dot([[1,0],[0,-1]]) + [50,-50]
+    pts3 = pts10.dot([[1,0],[0,-1]])
     pts12 = (pts5 + [0,50]).dot([[1,0],[0,-1]]) - [0,50]
     pts13 = (pts4 + [0,-50]).dot([[1,0],[0,-1]]) + [0,50]
     pts14 = (pts7 + [0,50]).dot([[1,0],[0,-1]]) - [0,50]
@@ -65,22 +71,31 @@ def uniquePoints(triangles):
 
     return points
 
-def drawUnicornEdges(unicorns):
+def drawUnicornEdges(unicorns, random=False):
     for u in unicorns:
         triangle = u["t"][0]
         for i,t in enumerate(triangle):
             if t[0] == u["x"] and t[1] == u["y"]:
+                if random:
+                    color = getRandomColor()
+                else:
+                    color = "white"
                 after = (i+1) % len(triangle)
                 lines = draw.Lines(triangle[i-1][0],triangle[i-1][1],t[0],t[1],triangle[after][0],triangle[after][1],
                     close=False,
-                    fill=getRandomColor(),
+                    fill=color,
                     stroke='black')
                 d.append(lines)
-    
+
+def drawUnicornCircles(unicorns):
+    for u in unicorns:
+        d.append(draw.Circle(u["x"], u["y"], 2,
+        fill='red', stroke_width=0.3, stroke='black'))
 
 
 if __name__ == "__main__":
     
+    # first triangle
     pts = np.array(
         [[0, 0],
          [20, 5],
@@ -101,14 +116,16 @@ if __name__ == "__main__":
          [20,20],
          ])
 
+    # generate the other triangles
     triangles = generateClones(pts)
-    for i, t in enumerate(triangles):
-        index = random.randint(0,6)
-        zeichneDreieck(t, colors[i % 9])
 
+    # draw triangles
+    #drawTriangles(triangles)
+
+    # build point-based data structure
     points = uniquePoints(triangles)
-    #pprint(points)
 
+    # find point which don't overlap / are unique in the structure
     unicorns = []
     for x in points.keys():
         dic = points[x]
@@ -122,10 +139,10 @@ if __name__ == "__main__":
                     }
                 )
 
-    #for u in unicorns:
-    #   d.append(draw.Circle(u["x"], u["y"], 2,
-    #    fill='red', stroke_width=0.3, stroke='black'))
+    # draw those points to check
+    #drawUnicornCircles(unicorns)
 
-    drawUnicornEdges(unicorns)
+    # draw adjacent edges
+    drawUnicornEdges(unicorns, random=True)
 
     d.saveSvg('example.svg')
