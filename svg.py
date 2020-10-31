@@ -8,17 +8,16 @@ d = draw.Drawing(200, 200, origin='center', displayInline=False)
 
 
 def zeichneDreieck(pts, color, xShift = 0, yShift = 0):
-    polygon = Polygon(pts)
-    xList, yList = polygon.exterior.coords.xy
-    p = draw.Path(stroke_width=0.5, stroke='green',
+    path = draw.Path(stroke_width=0.5, stroke='green',
               fill=color, fill_opacity=0.6)
     
-    p.M(xList[0] + xShift, yList[0] - yShift)  # Start path at point (-30, 5)
-    length = len(xList)
-    for l in range(1,length):
-        p.l(xList[l] - xList[l-1], yList[l] - yList[l-1])
-    p.Z()
-    d.append(p)
+    path.M(pts[0][0] + xShift, pts[0][1] - yShift)
+
+    length = len(pts)
+    for i in range(1,length):
+        path.l(pts[i][0] -  pts[i-1][0], pts[i][1] - pts[i-1][1])
+    path.Z()
+    d.append(path)
     
 def switchCoords(arr):
     result = np.array([[a[1],a[0]] for a in arr])
