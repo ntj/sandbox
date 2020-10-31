@@ -1,11 +1,16 @@
 import drawSvg as draw
-from shapely.affinity import scale
-from shapely.ops import transform
-from shapely.geometry import Polygon
 import numpy as np
+import svgwrite
+import random
+from pprint import pprint
 
-d = draw.Drawing(200, 200, origin='center', displayInline=False)
+d = draw.Drawing(250, 250, origin='center', displayInline=False)
 
+colors = ["yellow", "orange", "red", "purple", "blue", "green", "brown", "black", "pink"]
+
+def getRandomColor():
+    index = random.randint(0,len(colors)-1)
+    return colors[index]
 
 def zeichneDreieck(pts, color, xShift = 0, yShift = 0):
     path = draw.Path(stroke_width=0.5, stroke='green',
@@ -23,11 +28,61 @@ def switchCoords(arr):
     result = np.array([[a[1],a[0]] for a in arr])
     return result
 
+def generateClones(pts):
+    pts1 = pts.dot([[1,0],[0,-1]])
+    pts2 = pts.dot([[-1,0],[0,1]])
+    pts4 = switchCoords(pts)
+    pts5 = pts4.dot([[1,0],[0,-1]])
+    pts6 = pts2.dot([[1,0],[0,-1]])
+    pts7 = pts4.dot([[-1,0],[0,1]]) - [0,100]
+    pts8 = pts4.dot([[-1,0],[0,1]])
+    pts9 = pts4.dot([[1,0],[0,-1]])
+    pts10 = (pts - [50,0]).dot([[-1,0],[0,1]]) + [50,0]
+    pts11 = (pts2 + [50,0]).dot([[-1,0],[0,1]]) - [50,0]
+    pts3 = pts9.dot([[1,0],[0,-1]]) + [50,-50]
+    pts12 = (pts5 + [0,50]).dot([[1,0],[0,-1]]) - [0,50]
+    pts13 = (pts4 + [0,-50]).dot([[1,0],[0,-1]]) + [0,50]
+    pts14 = (pts7 + [0,50]).dot([[1,0],[0,-1]]) - [0,50]
+    pts15 = (pts6 + [50,0]).dot([[-1,0],[0,1]]) - [50,0]
+    pts16 = (pts8 + [0,-50]).dot([[1,0],[0,-1]]) + [0,50]
+
+    triangles = [pts, pts1, pts2, pts3, pts4, pts5, pts6, pts7, pts8, pts10, pts11, pts12, pts13, pts14, pts15, pts16]
+    return triangles
+
+def uniquePoints(triangles):
+    points = {}
+    for t in triangles:
+        for point in t:
+            x = point[0]
+            y = point[1]
+            if x in points.keys():
+                if y in points[x].keys():
+                    points[x][y].append(t)
+                else:
+                    points[x][y] = [t]
+            else:
+                points[x] = {y:[t]}
+
+    return points
+
+def drawUnicornEdges(unicorns):
+    for u in unicorns:
+        triangle = u["t"][0]
+        for i,t in enumerate(triangle):
+            if t[0] == u["x"] and t[1] == u["y"]:
+                after = (i+1) % len(triangle)
+                lines = draw.Lines(triangle[i-1][0],triangle[i-1][1],t[0],t[1],triangle[after][0],triangle[after][1],
+                    close=False,
+                    fill=getRandomColor(),
+                    stroke='black')
+                d.append(lines)
+    
+
+
 if __name__ == "__main__":
     
     pts = np.array(
-        [[0, 5],
-         [5, 0],
+        [[0, 0],
          [20, 5],
          [35, 0],
          [50, 0],
@@ -44,42 +99,33 @@ if __name__ == "__main__":
          [35,35],
          [30,20],
          [20,20],
-         [10,10]])
+         ])
 
-    pts1 = pts.dot([[1,0],[0,-1]])
-    pts2 = pts.dot([[-1,0],[0,1]])
-    pts3 = pts1.dot([[-1,0],[0,1]])
-    pts4 = switchCoords(pts)
-    pts5 = pts4.dot([[1,0],[0,-1]])
-    pts6 = pts2.dot([[1,0],[0,-1]])
-    pts7 = switchCoords(pts3)
-    pts8 = pts4.dot([[-1,0],[0,1]])
-    pts9 = pts4.dot([[1,0],[0,-1]])
-    pts10 = (pts - [50,0]).dot([[-1,0],[0,1]]) + [50,0]
-    pts11 = (pts2 + [50,0]).dot([[-1,0],[0,1]]) - [50,0]
-    pts12 = (pts5 + [0,50]).dot([[1,0],[0,-1]]) - [0,50]
-    pts11 = (pts2 + [50,0]).dot([[-1,0],[0,1]]) - [50,0]
-    pts13 = (pts4 + [0,-50]).dot([[1,0],[0,-1]]) + [0,50]
-    pts14 = (pts7 + [0,50]).dot([[1,0],[0,-1]]) - [0,50]
-    pts15 = (pts6 + [50,0]).dot([[-1,0],[0,1]]) - [50,0]
-    pts16 = (pts8 + [0,-50]).dot([[1,0],[0,-1]]) + [0,50]
-    
-    zeichneDreieck(pts,"yellow")
-    zeichneDreieck(pts1,"orange")
-    zeichneDreieck(pts2,"red")
-    zeichneDreieck(pts3,"purple", xShift=100)
-    zeichneDreieck(pts4,"blue")
-    zeichneDreieck(pts5,"green")
-    zeichneDreieck(pts6,"orange")
-    zeichneDreieck(pts7,"blue")
-    zeichneDreieck(pts8,"yellow")
-    zeichneDreieck(pts10,"brown")
-    zeichneDreieck(pts11,"brown")
-    zeichneDreieck(pts12,"brown")
-    zeichneDreieck(pts13,"brown")
-    zeichneDreieck(pts14,"red")
-    zeichneDreieck(pts15,"green")
-    zeichneDreieck(pts16,"purple")
+    triangles = generateClones(pts)
+    for i, t in enumerate(triangles):
+        index = random.randint(0,6)
+        zeichneDreieck(t, colors[i % 9])
 
+    points = uniquePoints(triangles)
+    #pprint(points)
+
+    unicorns = []
+    for x in points.keys():
+        dic = points[x]
+        for y in dic.keys():
+            if len(points[x][y]) == 1:
+                unicorns.append(
+                    {
+                        "x": x,
+                        "y": y,
+                        "t": points[x][y],
+                    }
+                )
+
+    #for u in unicorns:
+    #   d.append(draw.Circle(u["x"], u["y"], 2,
+    #    fill='red', stroke_width=0.3, stroke='black'))
+
+    drawUnicornEdges(unicorns)
 
     d.saveSvg('example.svg')
