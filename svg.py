@@ -72,18 +72,23 @@ def uniquePoints(triangles):
     return points
 
 def drawUnicornEdges(unicorns, random=False):
+    color = None
+    opacity = 1
     for u in unicorns:
         triangle = u["t"][0]
         for i,t in enumerate(triangle):
             if t[0] == u["x"] and t[1] == u["y"]:
                 if random:
                     color = getRandomColor()
+                    opacity = 1
                 else:
                     color = "white"
+                    opacity = 0
                 after = (i+1) % len(triangle)
                 lines = draw.Lines(triangle[i-1][0],triangle[i-1][1],t[0],t[1],triangle[after][0],triangle[after][1],
                     close=False,
                     fill=color,
+                    fill_opacity=opacity,
                     stroke='black')
                 d.append(lines)
 
