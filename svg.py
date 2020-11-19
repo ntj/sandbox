@@ -117,18 +117,17 @@ def drawUnicornCircles(unicorns, drawing=None):
         drawing.append(draw.Circle(u["x"], u["y"], 2,
                                    fill='red', stroke_width=0.3, stroke='black'))
 
-
 if __name__ == "__main__":
-    
     # first polygon
-    start = [0, 0]
-    middle = [50, 0]
-    end = [50, 50]
-    number = 10
+    a = [0, 0]
+    b = [50, 0]
+    ab = [(b[0] - a[0])/2, (b[1] - a[1])/2]
+    c = [50, 50]
+    bc = [(c[0] - b[0])/2, (c[1] - b[1])/2]
+    ac = [(c[0] - a[0])/2, (c[1] - a[1])/2]
+    number = 20
     points = []
-    points.append(start)
-    points.append(middle)
-    points.append(end)
+    print(ab, bc, ac)
 
     for i in range(number):
         x = random.randint(0,50)
@@ -145,13 +144,13 @@ if __name__ == "__main__":
         if p[0] < 25:
             final.append(list(p))
 
-    final.append(list(middle))
+    final.append(list(b))
 
     for p in pts:
         if p[0] >= 25 and p[1] < 35:
             final.append(p)
 
-    final.append(list(end))
+    final.append(list(c))
 
     for p in pts:
         if p[0] >= 25 and p[1] >= 35:
