@@ -3,7 +3,7 @@
      width="250" height="250" viewBox="-125.0 -125.0 250 250">
 <defs>
 </defs>
-<path d="M5,0 l11,-1 l5,0 l1,-1 l1,-1 l0,-4 l0,-2 l27,9 l-25,-10 l2,-1 l2,-3 l0,0 l3,-2 l0,-1 l4,-1 l5,-1 l1,0 l2,-4 l0,-6 l3,0 l3,-21 l-1,11 Z" stroke-width="0.5" stroke="green" fill="pink" fill-opacity="0.6" />
+<path d="M10,0 l2,-1 l6,-5 l1,-1 l0,0 l2,-2 l3,0 l26,9 l-20,-12 l1,-1 l0,-3 l9,0 l1,-5 l2,-2 l1,0 l2,0 l0,-3 l1,0 l0,-3 l3,-21 l-1,11 l0,0 Z" stroke-width="0.5" stroke="green" fill="black" fill-opacity="0.6" />
 <path d="M-100,100 L-100,-100" stroke="grey" stroke-width="0.3" fill="none" />
 <path d="M-100,100 L100,100" stroke="grey" stroke-width="0.3" fill="none" />
 <path d="M-90,100 L-90,-100" stroke="grey" stroke-width="0.3" fill="none" />
