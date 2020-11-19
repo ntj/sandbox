@@ -97,7 +97,7 @@ def drawUnicornEdges(unicorns, random=False, drawing=None):
             if t[0] == u["x"] and t[1] == u["y"]:
                 if random:
                     color = getRandomColor()
-                    opacity = 1
+                    opacity = 0.6
                 else:
                     color = "white"
                     opacity = 0
@@ -122,6 +122,10 @@ def absPoints(p1, p2):
     return abs(p1[0] - p2[0]) + abs(p1[1] - p2[1])
 
 
+def point(a, b, c, x, y, z):
+    return[a[0] * x + b[0] * y + c[0] * z, a[1] * x + b[1] * y + c[1] * z]
+
+
 if __name__ == "__main__":
     # first polygon
     a = [0, 0]
@@ -130,14 +134,16 @@ if __name__ == "__main__":
     c = [50, 50]
     bc = [(c[0] - b[0])/2, (c[1] - b[1])/2]
     ac = [(c[0] - a[0])/2, (c[1] - a[1])/2]
-    number = 25
+    number = 20
     points = []
     print(ab, bc, ac)
 
     for i in range(number):
-        x = random.randint(0, 50)
-        y = random.randint(0, 50)
-        points.append([x, y])
+        x = random.uniform(0, 1)
+        y = random.uniform(0, 1 - x)
+        z = 1 - x - y
+        print(x, y, z, x + y + z)
+        points.append(point(a, b, c, x, y, z))
 
     pts = np.array(points)
     pts = np.sort(pts, axis=0)
@@ -210,9 +216,9 @@ if __name__ == "__main__":
 
     # draw adjacent edges
     drawUnicornEdges(unicorns, random=True)
-    drawCoords(drawing=polygon)
-    drawCoords(drawing=star1)
-    drawCoords(drawing=star2)
+    # drawCoords(drawing=polygon)
+    # drawCoords(drawing=star1)
+    # drawCoords(drawing=star2)
 
     polygon.saveSvg('polygon.svg')
     star1.saveSvg('star1.svg')
