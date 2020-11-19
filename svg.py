@@ -22,7 +22,7 @@ def zeichneDreieck(pts, color=None, xShift=0, yShift=0, drawing=None):
         color = getRandomColor()
     if not drawing:
         drawing = star2
-    print("zeichne {0}".format(color))
+
     path = draw.Path(stroke_width=0.5, stroke='green',
                      fill=color, fill_opacity=0.6)
 
@@ -38,7 +38,7 @@ def zeichneDreieck(pts, color=None, xShift=0, yShift=0, drawing=None):
 def drawTriangles(triangles, drawing=None):
     for i, t in enumerate(triangles):
         index = random.randint(0, 6)
-        zeichneDreieck(t, colors[i % 9], drawing=drawing)
+        zeichneDreieck(t, colors[(i + index) % 9], drawing=drawing)
 
 
 def switchCoords(arr):
@@ -117,6 +117,11 @@ def drawUnicornCircles(unicorns, drawing=None):
         drawing.append(draw.Circle(u["x"], u["y"], 2,
                                    fill='red', stroke_width=0.3, stroke='black'))
 
+
+def absPoints(p1, p2):
+    return abs(p1[0] - p2[0]) + abs(p1[1] - p2[1])
+
+
 if __name__ == "__main__":
     # first polygon
     a = [0, 0]
@@ -125,37 +130,55 @@ if __name__ == "__main__":
     c = [50, 50]
     bc = [(c[0] - b[0])/2, (c[1] - b[1])/2]
     ac = [(c[0] - a[0])/2, (c[1] - a[1])/2]
-    number = 20
+    number = 25
     points = []
     print(ab, bc, ac)
 
     for i in range(number):
-        x = random.randint(0,50)
-        y = random.randint(0,50)
-        if y < x:
-            points.append([x,y])
-        else:
-            points.append([y,x])
-    
+        x = random.randint(0, 50)
+        y = random.randint(0, 50)
+        points.append([x, y])
+
     pts = np.array(points)
     pts = np.sort(pts, axis=0)
-    final = []
+    final = [a]
+
+    ablist = []
+    bclist = []
+    aclist = []
+
     for p in pts:
-        if p[0] < 25:
-            final.append(list(p))
+        absab = absPoints([p[0], p[1]], ab)
+        absbc = absPoints([p[0], p[1]], bc)
+        absac = absPoints([p[0], p[1]], ac)
+        print(p, ":", absab, absbc, absac)
+        if min(absab, absbc, absac) == absab:
+            print("add")
+            ablist.append(p)
+        if min(absab, absbc, absac) == absbc:
+            print("add")
+            bclist.append(p)
+        if min(absab, absbc, absac) == absac:
+            print("add")
+            aclist.append(p)
+
+    print(len(ablist), len(bclist), len(aclist))
+
+    for l in ablist:
+        final.append(l)
 
     final.append(list(b))
 
-    for p in pts:
-        if p[0] >= 25 and p[1] < 35:
-            final.append(p)
+    for l in bclist:
+        final.append(l)
 
     final.append(list(c))
 
-    for p in pts:
-        if p[0] >= 25 and p[1] >= 35:
-            final.append(list(p))
+    for l in aclist:
+        final.append(l)
+
     final = np.array(final)
+    print(final)
 
     zeichneDreieck(final, drawing=polygon)
 
