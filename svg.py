@@ -124,7 +124,7 @@ if __name__ == "__main__":
     start = [0, 0]
     middle = [50, 0]
     end = [50, 50]
-    number = 15
+    number = 10
     points = []
     points.append(start)
     points.append(middle)
@@ -139,11 +139,29 @@ if __name__ == "__main__":
             points.append([y,x])
     
     pts = np.array(points)
+    pts = np.sort(pts, axis=0)
+    final = []
+    for p in pts:
+        if p[0] < 25:
+            final.append(list(p))
 
-    zeichneDreieck(pts, drawing=polygon)
+    final.append(list(middle))
+
+    for p in pts:
+        if p[0] >= 25 and p[1] < 35:
+            final.append(p)
+
+    final.append(list(end))
+
+    for p in pts:
+        if p[0] >= 25 and p[1] >= 35:
+            final.append(list(p))
+    final = np.array(final)
+
+    zeichneDreieck(final, drawing=polygon)
 
     # generate the other triangles
-    triangles = generateClones(pts)
+    triangles = generateClones(final)
 
     # draw triangles
     drawTriangles(triangles, drawing=star1)
