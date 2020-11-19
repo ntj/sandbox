@@ -119,27 +119,26 @@ def drawUnicornCircles(unicorns, drawing=None):
 
 
 if __name__ == "__main__":
+    
+    # first polygon
+    start = [0, 0]
+    middle = [50, 0]
+    end = [50, 50]
+    number = 15
+    points = []
+    points.append(start)
+    points.append(middle)
+    points.append(end)
 
-    # first triangle
-    pts = np.array(
-        [[0, 0],
-         [20, 5],
-         [35, 0],
-         [50, 0],
-         [50, 10],
-         [45, 20],
-         [50, 30],
-         [50, 33],
-         [48, 38],
-         [50, 42],
-         [50, 50],
-         [45, 45],
-         [45, 42],
-         [38, 38],
-         [35, 35],
-         [30, 20],
-         [20, 20],
-         ])
+    for i in range(number):
+        x = random.randint(0,50)
+        y = random.randint(0,50)
+        if y < x:
+            points.append([x,y])
+        else:
+            points.append([y,x])
+    
+    pts = np.array(points)
 
     zeichneDreieck(pts, drawing=polygon)
 
