@@ -130,88 +130,84 @@ def point(a, b, c, x, y, z):
     return[a[0] * x + b[0] * y + c[0] * z, a[1] * x + b[1] * y + c[1] * z]
 
 
-def wanted(x, y):
-    threshold = 6
+def wanted(x, y, threshold):
     if abs(x-y) < threshold:
         return True
-    if abs(y) < threshold:
+    if y < threshold:
         return True
     if abs(x - 50) < threshold:
         return True
 
     return False
-if __name__ == "__main__":
+
+
+def createPolygon(nrPoints, nrPointsLine, threshold):
     # first polygon
     a = [0, 0]
     b = [50, 0]
-    ab = [(b[0] - a[0])/2, (b[1] - a[1])/2]
+    ab = [(b[0] - a[0])/2, 0]
     c = [50, 50]
-    bc = [(c[0] - b[0])/2, (c[1] - b[1])/2]
-    ac = [(c[0] - a[0])/2, (c[1] - a[1])/2]
-    number = 20
+    bc = [50, (c[1] - b[1])/2]
+    ac = [25, 25]
     points = []
 
-    for i in range(number):
+    for i in range(nrPoints):
         found = False
         while not found:
             x = random.uniform(0, 1)
             y = random.uniform(0, 1 - x)
             z = 1 - x - y
             p = point(a, b, c, x, y, z)
-            found = wanted(p[0], p[1])
+            found = wanted(p[0], p[1], threshold)
         points.append(p)
 
-
     final = [a]
-
-    add = 3
 
     pts = np.array(points)
     pts = np.sort(pts, axis=0)
 
-    add = 6
     ablist = []
     bclist = []
     aclist = []
-    for a in range(add):
-        ablist.append([float(random.randint(0,50)), 0.0])
-        bclist.append([50.0, float(random.randint(0,50))])
-        num = random.randint(0,50)
+    for a in range(nrPointsLine):
+        ablist.append([float(random.randint(0, 50)), 0.0])
+        bclist.append([50.0, float(random.randint(0, 50))])
+        num = random.randint(0, 50)
         aclist.append([num, num])
 
-
     for p in pts:
+        if abs(p[0] - p[1]) < 8:
+            aclist.append(p)
+            continue
         absab = absPoints([p[0], p[1]], ab)
         absbc = absPoints([p[0], p[1]], bc)
-        absac = absPoints([p[0], p[1]], ac)
-        if min(absab, absbc, absac) == absab:
+        if min(absab, absbc) == absab:
             ablist.append(p)
-        if min(absab, absbc, absac) == absbc:
+        if min(absab, absbc) == absbc:
             bclist.append(p)
-        if min(absab, absbc, absac) == absac:
-            aclist.append(p)
 
     ablist.sort(key=lambda e: e[0])
-    
+
     for l in ablist:
         final.append(l)
 
-    final.append(list(b))
+    if random.randint(0, 10) % 2 == 1:
+        final.append(b)
 
     bclist.sort(key=lambda e: e[1])
 
     for l in bclist:
         final.append(l)
 
-    final.append(list(c))
-    
     aclist.sort(key=lambda e: e[0], reverse=True)
+
+    if random.randint(0, 10) % 2 == 1:
+        final.append(c)
 
     for l in aclist:
         final.append(l)
 
     final = np.array(final)
-    print(final)
 
     zeichneDreieck(final, drawing=polygon)
 
@@ -250,3 +246,7 @@ if __name__ == "__main__":
     polygon.saveSvg('polygon.svg')
     star1.saveSvg('star1.svg')
     star2.saveSvg('star2.svg')
+
+
+if __name__ == "__main__":
+    createPolygon(10, 3, 6)
