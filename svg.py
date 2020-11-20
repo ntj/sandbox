@@ -101,13 +101,20 @@ def drawUnicornEdges(unicorns, random=False, drawing=None):
                     color = "white"
                     opacity = 0
                 after = (i+1) % len(triangle)
-                lines = draw.Lines(triangle[i-1][0], triangle[i-1][1], t[0], t[1], triangle[after][0], triangle[after][1],
-                                   close=False,
-                                   fill=color,
-                                   fill_opacity=opacity,
-                                   stroke='black',
-                                   stroke_width=1)
-                drawing.append(lines)
+                lines2 = draw.Lines(triangle[i-1][0], triangle[i-1][1], t[0], t[1], triangle[after][0], triangle[after][1],
+                                    close=False,
+                                    fill=color,
+                                    fill_opacity=opacity,
+                                    stroke='black',
+                                    stroke_width=1)
+                lines1 = draw.Lines(triangle[i-1][0], triangle[i-1][1], t[0], t[1], triangle[after][0], triangle[after][1],
+                                    close=False,
+                                    fill=None,
+                                    fill_opacity=0,
+                                    stroke='black',
+                                    stroke_width=1)
+                star2.append(lines2)
+                star1.append(lines1)
 
 
 def drawUnicornCircles(unicorns, drawing=None):
@@ -211,7 +218,7 @@ def createPolygon(nrPoints, nrPointsLine, threshold, name):
     triangles = generateClones(final)
 
     # draw triangles
-    drawTriangles(triangles, drawing=star1)
+    #drawTriangles(triangles, drawing=star1)
 
     # build point-based data structure
     points = uniquePoints(triangles)
@@ -245,7 +252,7 @@ def createPolygon(nrPoints, nrPointsLine, threshold, name):
 
 
 if __name__ == "__main__":
-    nr = 3
+    nr = 10
     for i in range(nr):
         polygon = draw.Drawing(250, 250, origin='center', displayInline=False)
         star1 = draw.Drawing(250, 250, origin='center', displayInline=False)
