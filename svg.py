@@ -17,16 +17,18 @@ def getRandomColor():
     return colors[index]
 
 
-def zeichneDreieck(pts, color=None, xShift=0, yShift=0, drawing=None):
+def zeichneDreieck(pts, color=None, drawing=None):
+    opacity = 0.6
     if not color:
         color = getRandomColor()
+        opacity = 0
     if not drawing:
         drawing = star2
 
-    path = draw.Path(stroke_width=0.5, stroke='green',
-                     fill=color, fill_opacity=0.6)
+    path = draw.Path(stroke_width=1, stroke='grey',
+                     fill=color, fill_opacity=opacity)
 
-    path.M(pts[0][0] + xShift, pts[0][1] - yShift)
+    path.M(pts[0][0], pts[0][1])
 
     length = len(pts)
     for i in range(1, length):
@@ -38,7 +40,8 @@ def zeichneDreieck(pts, color=None, xShift=0, yShift=0, drawing=None):
 def drawTriangles(triangles, drawing=None):
     for i, t in enumerate(triangles):
         index = random.randint(0, 6)
-        zeichneDreieck(t, colors[(i + index) % 9], drawing=drawing)
+        # zeichneDreieck(t, colors[(i + index) % 9], drawing=drawing)
+        zeichneDreieck(t, drawing=drawing)
 
 
 def switchCoords(arr):
@@ -106,7 +109,8 @@ def drawUnicornEdges(unicorns, random=False, drawing=None):
                                    close=False,
                                    fill=color,
                                    fill_opacity=opacity,
-                                   stroke='black')
+                                   stroke='black',
+                                   stroke_width=1)
                 drawing.append(lines)
 
 
@@ -126,6 +130,16 @@ def point(a, b, c, x, y, z):
     return[a[0] * x + b[0] * y + c[0] * z, a[1] * x + b[1] * y + c[1] * z]
 
 
+def wanted(x, y):
+    threshold = 6
+    if abs(x-y) < threshold:
+        return True
+    if abs(y) < threshold:
+        return True
+    if abs(x - 50) < threshold:
+        return True
+
+    return False
 if __name__ == "__main__":
     # first polygon
     a = [0, 0]
@@ -136,49 +150,62 @@ if __name__ == "__main__":
     ac = [(c[0] - a[0])/2, (c[1] - a[1])/2]
     number = 20
     points = []
-    print(ab, bc, ac)
 
     for i in range(number):
-        x = random.uniform(0, 1)
-        y = random.uniform(0, 1 - x)
-        z = 1 - x - y
-        print(x, y, z, x + y + z)
-        points.append(point(a, b, c, x, y, z))
+        found = False
+        while not found:
+            x = random.uniform(0, 1)
+            y = random.uniform(0, 1 - x)
+            z = 1 - x - y
+            p = point(a, b, c, x, y, z)
+            found = wanted(p[0], p[1])
+        points.append(p)
+
+
+    final = [a]
+
+    add = 3
 
     pts = np.array(points)
     pts = np.sort(pts, axis=0)
-    final = [a]
 
+    add = 6
     ablist = []
     bclist = []
     aclist = []
+    for a in range(add):
+        ablist.append([float(random.randint(0,50)), 0.0])
+        bclist.append([50.0, float(random.randint(0,50))])
+        num = random.randint(0,50)
+        aclist.append([num, num])
+
 
     for p in pts:
         absab = absPoints([p[0], p[1]], ab)
         absbc = absPoints([p[0], p[1]], bc)
         absac = absPoints([p[0], p[1]], ac)
-        print(p, ":", absab, absbc, absac)
         if min(absab, absbc, absac) == absab:
-            print("add")
             ablist.append(p)
         if min(absab, absbc, absac) == absbc:
-            print("add")
             bclist.append(p)
         if min(absab, absbc, absac) == absac:
-            print("add")
             aclist.append(p)
 
-    print(len(ablist), len(bclist), len(aclist))
-
+    ablist.sort(key=lambda e: e[0])
+    
     for l in ablist:
         final.append(l)
 
     final.append(list(b))
 
+    bclist.sort(key=lambda e: e[1])
+
     for l in bclist:
         final.append(l)
 
     final.append(list(c))
+    
+    aclist.sort(key=lambda e: e[0], reverse=True)
 
     for l in aclist:
         final.append(l)
