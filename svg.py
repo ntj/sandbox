@@ -141,7 +141,7 @@ def wanted(x, y, threshold):
     return False
 
 
-def createPolygon(nrPoints, nrPointsLine, threshold):
+def createPolygon(nrPoints, nrPointsLine, threshold, name):
     # first polygon
     a = [0, 0]
     b = [50, 0]
@@ -243,10 +243,12 @@ def createPolygon(nrPoints, nrPointsLine, threshold):
     # drawCoords(drawing=star1)
     # drawCoords(drawing=star2)
 
-    polygon.saveSvg('polygon.svg')
-    star1.saveSvg('star1.svg')
-    star2.saveSvg('star2.svg')
+    polygon.saveSvg('img/polygon' + name)
+    star1.saveSvg('img/star1' + name)
+    star2.saveSvg('img/star2' + name)
 
 
 if __name__ == "__main__":
-    createPolygon(10, 3, 6)
+    nr = 3
+    for i in range(nr):
+        createPolygon(10, 3, 6, "-" + str(i) + ".svg")

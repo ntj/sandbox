@@ -1,4 +1,10 @@
 # sandbox
-![example](./polygon.svg "Polygon")
-![star1](./star1.svg "1. Stern")
-![star2](./star2.svg "2. Stern")
+![example](./img/polygon-0.svg "Polygon")
+![star1](./img/star1-0.svg "1. Stern")
+![star2](./img/star2-0.svg "2. Stern")
+![example](./img/polygon-1.svg "Polygon")
+![star1](./img/star1-1.svg "1. Stern")
+![star2](./img/star2-1.svg "2. Stern")
+![example](./img/polygon-2.svg "Polygon")
+![star1](./img/star1-2.svg "1. Stern")
+![star2](./img/star2-2.svg "2. Stern")
