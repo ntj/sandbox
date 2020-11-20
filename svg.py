@@ -4,10 +4,6 @@ import random
 from pprint import pprint
 from coords import drawCoords
 
-polygon = draw.Drawing(250, 250, origin='center', displayInline=False)
-star1 = draw.Drawing(250, 250, origin='center', displayInline=False)
-star2 = draw.Drawing(250, 250, origin='center', displayInline=False)
-
 colors = ["yellow", "orange", "red", "purple",
           "blue", "green", "brown", "black", "pink"]
 
@@ -251,4 +247,7 @@ def createPolygon(nrPoints, nrPointsLine, threshold, name):
 if __name__ == "__main__":
     nr = 3
     for i in range(nr):
+        polygon = draw.Drawing(250, 250, origin='center', displayInline=False)
+        star1 = draw.Drawing(250, 250, origin='center', displayInline=False)
+        star2 = draw.Drawing(250, 250, origin='center', displayInline=False)
         createPolygon(10, 3, 6, "-" + str(i) + ".svg")
