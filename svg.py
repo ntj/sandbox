@@ -257,4 +257,4 @@ if __name__ == "__main__":
         polygon = draw.Drawing(250, 250, origin='center', displayInline=False)
         star1 = draw.Drawing(250, 250, origin='center', displayInline=False)
         star2 = draw.Drawing(250, 250, origin='center', displayInline=False)
-        createPolygon(10, 3, 6, "-" + str(i) + ".svg")
+        createPolygon(5, 2, 10, "-" + str(i) + ".svg")
