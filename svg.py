@@ -267,7 +267,11 @@ if __name__ == "__main__":
                 250, 250, origin='center', displayInline=False)
             star2 = draw.Drawing(
                 250, 250, origin='center', displayInline=False)
+            name = '-{0}-{1}-{2}-{3}-{4}.svg'.format(g, i,
+                                                     nrPoints, nrPointsLine, treshold)
             createPolygon(nrPoints, nrPointsLine,
-                          treshold, "-" + str(i) + ".svg")
-            os.system(
-                'convert -delay 110 -loop 0 -density 200 img/star2-*.svg img/star{0}.gif'.format(g))
+                          treshold, name)
+
+    for g in range(nrGifs):
+        os.system(
+            'convert -delay 110 -loop 0 -density 200 img/star2-{0}-*.svg img/star{0}.gif'.format(g))

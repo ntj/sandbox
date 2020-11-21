@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="250" height="250" viewBox="-125.0 -125.0 250 250">
+<defs>
+</defs>
+<path d="M3.0,-0.0 L32.52826198650938,-10.846166563282733 L34.0,-0.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M3.0,-0.0 L32.52826198650938,10.846166563282733 L34.0,-0.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M49.0,51.0 L43.0,57.0 L17.0,83.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M49.0,-51.0 L43.0,-57.0 L17.0,-83.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M12.0,50.0 L49.0,51.0 L43.0,57.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M12.0,-50.0 L49.0,-51.0 L43.0,-57.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M43.0,57.0 L17.0,83.0 L0.0,100.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M43.0,-57.0 L17.0,-83.0 L0.0,-100.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M-3.0,-0.0 L-32.52826198650938,-10.846166563282733 L-34.0,-0.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M-3.0,-0.0 L-32.52826198650938,10.846166563282733 L-34.0,-0.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M-49.0,51.0 L-43.0,57.0 L-17.0,83.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M-49.0,-51.0 L-43.0,-57.0 L-17.0,-83.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M-12.0,50.0 L-49.0,51.0 L-43.0,57.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M-12.0,-50.0 L-49.0,-51.0 L-43.0,-57.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M-43.0,57.0 L-17.0,83.0 L0.0,100.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M-43.0,-57.0 L-17.0,-83.0 L0.0,-100.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M97.0,-0.0 L67.47173801349062,10.846166563282733 L66.0,-0.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M97.0,-0.0 L67.47173801349062,-10.846166563282733 L66.0,-0.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M51.0,49.0 L57.0,43.0 L83.0,17.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M51.0,-49.0 L57.0,-43.0 L83.0,-17.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M50.0,12.0 L51.0,49.0 L57.0,43.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M50.0,-12.0 L51.0,-49.0 L57.0,-43.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M57.0,43.0 L83.0,17.0 L100.0,-0.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M57.0,-43.0 L83.0,-17.0 L100.0,-0.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M0.0,-3.0 L10.846166563282733,-32.52826198650938 L0.0,-34.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M0.0,3.0 L10.846166563282733,32.52826198650938 L0.0,34.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M0.0,97.0 L10.846166563282733,67.47173801349062 L0.0,66.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M0.0,-97.0 L10.846166563282733,-67.47173801349062 L0.0,-66.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M0.0,97.0 L-10.846166563282733,67.47173801349062 L0.0,66.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M0.0,-3.0 L-10.846166563282733,-32.52826198650938 L0.0,-34.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M0.0,3.0 L-10.846166563282733,32.52826198650938 L0.0,34.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M0.0,-97.0 L-10.846166563282733,-67.47173801349062 L0.0,-66.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M-97.0,-0.0 L-67.47173801349062,-10.846166563282733 L-66.0,-0.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M-97.0,-0.0 L-67.47173801349062,10.846166563282733 L-66.0,-0.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M-51.0,-49.0 L-57.0,-43.0 L-83.0,-17.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M-51.0,49.0 L-57.0,43.0 L-83.0,17.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M-50.0,-12.0 L-51.0,-49.0 L-57.0,-43.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M-50.0,12.0 L-51.0,49.0 L-57.0,43.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M-57.0,-43.0 L-83.0,-17.0 L-100.0,-0.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M-57.0,43.0 L-83.0,17.0 L-100.0,-0.0" fill-opacity="0" stroke="black" stroke-width="1" />
+</svg>
