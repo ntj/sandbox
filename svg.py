@@ -3,6 +3,7 @@ import numpy as np
 import random
 from pprint import pprint
 from coords import drawCoords
+import os
 
 colors = ["yellow", "orange", "red", "purple",
           "blue", "green", "brown", "black", "pink"]
@@ -252,9 +253,21 @@ def createPolygon(nrPoints, nrPointsLine, threshold, name):
 
 
 if __name__ == "__main__":
-    nr = 10
-    for i in range(nr):
-        polygon = draw.Drawing(250, 250, origin='center', displayInline=False)
-        star1 = draw.Drawing(250, 250, origin='center', displayInline=False)
-        star2 = draw.Drawing(250, 250, origin='center', displayInline=False)
-        createPolygon(50, 5, 10, "-" + str(i) + ".svg")
+    nrGifs = 9
+    for g in range(nrGifs):
+        print("Create gif {0}".format(g))
+        nrStars = 10
+        nrPoints = random.randint(1, 20)
+        nrPointsLine = random.randint(3, 8)
+        treshold = random.randint(3, 20)
+        for i in range(nrStars):
+            polygon = draw.Drawing(
+                250, 250, origin='center', displayInline=False)
+            star1 = draw.Drawing(
+                250, 250, origin='center', displayInline=False)
+            star2 = draw.Drawing(
+                250, 250, origin='center', displayInline=False)
+            createPolygon(nrPoints, nrPointsLine,
+                          treshold, "-" + str(i) + ".svg")
+            os.system(
+                'convert -delay 110 -loop 0 -density 200 img/star2-*.svg img/star{0}.gif'.format(g))

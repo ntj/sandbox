@@ -1,10 +1,2 @@
 # sandbox
-![star](./img/star.gif "Stern")
-![star](./img/star1.gif "Stern")
-![star](./img/star2.gif "Stern")
-![star](./img/star3.gif "Stern")
-![star](./img/star4.gif "Stern")
-![star](./img/star5.gif "Stern")
-![star](./img/star6.gif "Stern")
-![star](./img/star7.gif "Stern")
-![star](./img/star8.gif "Stern")
+<img src="img/star0.gif" alt="star" width=“100”/>
