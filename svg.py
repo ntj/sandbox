@@ -219,7 +219,7 @@ def createPolygon(nrPoints, nrPointsLine, threshold, name):
     triangles = generateClones(final)
 
     # draw triangles
-    #drawTriangles(triangles, drawing=star1)
+    # drawTriangles(triangles, drawing=star1)
 
     # build point-based data structure
     points = uniquePoints(triangles)
