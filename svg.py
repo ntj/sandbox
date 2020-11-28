@@ -253,24 +253,40 @@ def createPolygon(nrPoints, nrPointsLine, threshold, name):
 
 
 if __name__ == "__main__":
+    os.system('rm img/*')
+
     nrGifs = 9
-    for g in range(nrGifs):
-        print("Create gif {0}".format(g))
-        nrStars = 10
-        nrPoints = random.randint(1, 20)
-        nrPointsLine = random.randint(3, 8)
-        treshold = random.randint(3, 20)
-        for i in range(nrStars):
-            polygon = draw.Drawing(
-                250, 250, origin='center', displayInline=False)
-            star1 = draw.Drawing(
-                250, 250, origin='center', displayInline=False)
-            star2 = draw.Drawing(
-                250, 250, origin='center', displayInline=False)
-            name = '-{0}-{1}-{2}-{3}-{4}.svg'.format(g, i,
-                                                     nrPoints, nrPointsLine, treshold)
-            createPolygon(nrPoints, nrPointsLine,
-                          treshold, name)
+
+    with open('index.html', 'w') as myFile:
+        myFile.write('<html>')
+        myFile.write('<body>')
+        myFile.write('<table>')
+
+        for g in range(nrGifs):
+            print("Create gif {0}".format(g))
+            nrStars = 10
+            nrPoints = random.randint(1, 20)
+            nrPointsLine = random.randint(3, 8)
+            treshold = random.randint(3, 20)
+            for i in range(nrStars):
+                polygon = draw.Drawing(
+                    250, 250, origin='center', displayInline=False)
+                star1 = draw.Drawing(
+                    250, 250, origin='center', displayInline=False)
+                star2 = draw.Drawing(
+                    250, 250, origin='center', displayInline=False)
+                name = '-{0}-{1}-{2}-{3}-{4}.svg'.format(g, i,
+                                                         nrPoints, nrPointsLine, treshold)
+                createPolygon(nrPoints, nrPointsLine,
+                              treshold, name)
+                myFile.write('<tr><td>')
+                myFile.write('<img src="img/star1-{0}-{1}-{2}-{3}-{4}.svg" width="250"></td><td><img src="img/star2-{0}-{1}-{2}-{3}-{4}.svg" width="250">'.format(
+                    g, i, nrPoints, nrPointsLine, treshold))
+                myFile.write('</td></tr>')
+
+        myFile.write('</table>')
+        myFile.write('</body>')
+        myFile.write('</html>')
 
     for g in range(nrGifs):
         os.system(
