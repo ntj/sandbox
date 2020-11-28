@@ -260,14 +260,23 @@ if __name__ == "__main__":
     with open('index.html', 'w') as myFile:
         myFile.write('<html>\n')
         myFile.write('<body>\n')
-        myFile.write('<table>')
+        myFile.write('<a name="start">\n')
+        for i in range(9):
+            myFile.write('<a href="#{0}">'.format(i))
+            myFile.write(
+                '<img src="img/star{0}.gif" width="250" /></a>'.format(i))
+        myFile.write('<br /><br />')
 
         for g in range(nrGifs):
-            print("Create gif {0}".format(g))
             nrStars = 10
             nrPoints = random.randint(1, 20)
             nrPointsLine = random.randint(3, 8)
             treshold = random.randint(3, 20)
+            myFile.write('<table>')
+            myFile.write('<tr><a name="{0}"></tr>'.format(g))
+            myFile.write('<tr>Konfiguration {0}, Parameter: {2}-{3}-{4}</tr>&nbsp;<a href="#start">zurück</a>'.format(
+                g, i, nrPoints, nrPointsLine, treshold))
+            myFile.write('<tr><td>')
             for i in range(nrStars):
                 polygon = draw.Drawing(
                     250, 250, origin='center', displayInline=False)
@@ -279,14 +288,11 @@ if __name__ == "__main__":
                                                          nrPoints, nrPointsLine, treshold)
                 createPolygon(nrPoints, nrPointsLine,
                               treshold, name)
-                myFile.write(
-                    '<tr><td>Konfiguration {0}, Stern {1}, Parameter: {2}-{3}-{4}</td></tr>'.format(g, i, nrPoints, nrPointsLine, treshold))
-                myFile.write('<tr><td>')
                 myFile.write('<img src="img/star1-{0}-{1}-{2}-{3}-{4}.svg" width="250"></td><td><img src="img/star2-{0}-{1}-{2}-{3}-{4}.svg" width="250">'.format(
                     g, i, nrPoints, nrPointsLine, treshold))
                 myFile.write('</td></tr>\n')
+                myFile.write('</table><br />\n')
 
-        myFile.write('</table>\n')
         myFile.write('</body>\n')
         myFile.write('</html>')
 
