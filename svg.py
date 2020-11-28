@@ -261,21 +261,22 @@ if __name__ == "__main__":
         myFile.write('<html>\n')
         myFile.write('<body>\n')
         myFile.write('<a name="start">\n')
-        for i in range(9):
+        for i in range(nrGifs):
             myFile.write('<a href="#{0}">'.format(i))
             myFile.write(
                 '<img src="img/star{0}.gif" width="250" /></a>'.format(i))
         myFile.write('<br /><br />')
 
         for g in range(nrGifs):
+            print("Create stars run {0}".format(g))
             nrStars = 10
             nrPoints = random.randint(1, 20)
             nrPointsLine = random.randint(3, 8)
             treshold = random.randint(3, 20)
+            myFile.write('<br />Konfiguration {0}, Parameter: {1}-{2}-{3}&nbsp;<a href="#start">zurück</a><br />'.format(
+                g, nrPoints, nrPointsLine, treshold))
             myFile.write('<table>')
             myFile.write('<tr><a name="{0}"></tr>'.format(g))
-            myFile.write('<tr>Konfiguration {0}, Parameter: {2}-{3}-{4}</tr>&nbsp;<a href="#start">zurück</a>'.format(
-                g, i, nrPoints, nrPointsLine, treshold))
             myFile.write('<tr><td>')
             for i in range(nrStars):
                 polygon = draw.Drawing(
@@ -288,10 +289,10 @@ if __name__ == "__main__":
                                                          nrPoints, nrPointsLine, treshold)
                 createPolygon(nrPoints, nrPointsLine,
                               treshold, name)
-                myFile.write('<img src="img/star1-{0}-{1}-{2}-{3}-{4}.svg" width="250"></td><td><img src="img/star2-{0}-{1}-{2}-{3}-{4}.svg" width="250">'.format(
+                myFile.write('<img src="img/star1-{0}-{1}-{2}-{3}-{4}.svg" width="250"><img src="img/star2-{0}-{1}-{2}-{3}-{4}.svg" width="250">'.format(
                     g, i, nrPoints, nrPointsLine, treshold))
                 myFile.write('</td></tr>\n')
-                myFile.write('</table><br />\n')
+            myFile.write('</table><br />\n')
 
         myFile.write('</body>\n')
         myFile.write('</html>')
