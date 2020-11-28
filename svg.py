@@ -258,8 +258,8 @@ if __name__ == "__main__":
     nrGifs = 9
 
     with open('index.html', 'w') as myFile:
-        myFile.write('<html>')
-        myFile.write('<body>')
+        myFile.write('<html>\n')
+        myFile.write('<body>\n')
         myFile.write('<table>')
 
         for g in range(nrGifs):
@@ -279,13 +279,15 @@ if __name__ == "__main__":
                                                          nrPoints, nrPointsLine, treshold)
                 createPolygon(nrPoints, nrPointsLine,
                               treshold, name)
+                myFile.write(
+                    '<tr><td>Konfiguration {0}, Stern {1}, Parameter: {2}-{3}-{4}</td></tr>'.format(g, i, nrPoints, nrPointsLine, treshold))
                 myFile.write('<tr><td>')
                 myFile.write('<img src="img/star1-{0}-{1}-{2}-{3}-{4}.svg" width="250"></td><td><img src="img/star2-{0}-{1}-{2}-{3}-{4}.svg" width="250">'.format(
                     g, i, nrPoints, nrPointsLine, treshold))
-                myFile.write('</td></tr>')
+                myFile.write('</td></tr>\n')
 
-        myFile.write('</table>')
-        myFile.write('</body>')
+        myFile.write('</table>\n')
+        myFile.write('</body>\n')
         myFile.write('</html>')
 
     for g in range(nrGifs):
