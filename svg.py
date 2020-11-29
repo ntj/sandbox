@@ -247,10 +247,6 @@ def createPolygon(nrPoints, nrPointsLine, threshold, name):
     # drawCoords(drawing=star1)
     # drawCoords(drawing=star2)
 
-    polygon.saveSvg('img/polygon' + name)
-    star1.saveSvg('img/star1' + name)
-    star2.saveSvg('img/star2' + name)
-
 
 if __name__ == "__main__":
     os.system('rm img/*')
@@ -289,6 +285,13 @@ if __name__ == "__main__":
                                                          nrPoints, nrPointsLine, treshold)
                 createPolygon(nrPoints, nrPointsLine,
                               treshold, name)
+                arc = draw.ArcLine(0,97,8,-50,234,stroke='black', stroke_width=1, fill='white', fill_opacity=1)
+                circle = draw.Circle(0,97,4,stroke='black', stroke_width=1, fill='white', fill_opacity=1)
+                star1.append(arc)
+                star1.append(circle)
+                polygon.saveSvg('img/polygon' + name)
+                star1.saveSvg('img/star1' + name)
+                star2.saveSvg('img/star2' + name)
                 myFile.write('<img src="img/star1-{0}-{1}-{2}-{3}-{4}.svg" width="250"><img src="img/star2-{0}-{1}-{2}-{3}-{4}.svg" width="250">'.format(
                     g, i, nrPoints, nrPointsLine, treshold))
                 myFile.write('</td></tr>\n')
