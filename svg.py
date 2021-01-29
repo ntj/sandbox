@@ -249,7 +249,7 @@ def createPolygon(nrPoints, nrPointsLine, threshold, name):
 
 
 if __name__ == "__main__":
-    #os.system('rm img/*')
+    os.system('rm img/*')
 
     nrGifs = 9
 
