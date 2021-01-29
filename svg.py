@@ -249,7 +249,7 @@ def createPolygon(nrPoints, nrPointsLine, threshold, name):
 
 
 if __name__ == "__main__":
-    os.system('rm img/*')
+    #os.system('rm img/*')
 
     nrGifs = 9
 
@@ -285,8 +285,10 @@ if __name__ == "__main__":
                                                          nrPoints, nrPointsLine, treshold)
                 createPolygon(nrPoints, nrPointsLine,
                               treshold, name)
-                arc = draw.ArcLine(0,97,8,-50,234,stroke='black', stroke_width=1, fill='white', fill_opacity=1)
-                circle = draw.Circle(0,97,4,stroke='black', stroke_width=1, fill='white', fill_opacity=1)
+                arc = draw.ArcLine(0, 97, 8, -50, 234, stroke='black',
+                                   stroke_width=1, fill='white', fill_opacity=1)
+                circle = draw.Circle(
+                    0, 97, 4, stroke='black', stroke_width=1, fill='white', fill_opacity=1)
                 star1.append(arc)
                 star1.append(circle)
                 polygon.saveSvg('img/polygon' + name)
