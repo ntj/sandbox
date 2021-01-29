@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="250" height="250" viewBox="-125.0 -125.0 250 250">
+<defs>
+</defs>
+<path d="M50.0,50.0 L49.0,51.0 L32.0,68.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M50.0,-50.0 L49.0,-51.0 L32.0,-68.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M49.0,51.0 L32.0,68.0 L22.082806968791672,71.15886299504099" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M49.0,-51.0 L32.0,-68.0 L22.082806968791672,-71.15886299504099" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M32.0,-32.0 L28.84113700495901,-22.082806968791672 L24.0,-24.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M32.0,32.0 L28.84113700495901,22.082806968791672 L24.0,24.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M22.082806968791672,71.15886299504099 L24.0,76.0 L22.0,78.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M22.082806968791672,-71.15886299504099 L24.0,-76.0 L22.0,-78.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M24.0,76.0 L22.0,78.0 L16.0,84.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M24.0,-76.0 L22.0,-78.0 L16.0,-84.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M22.0,78.0 L16.0,84.0 L11.0,89.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M22.0,-78.0 L16.0,-84.0 L11.0,-89.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M16.0,84.0 L11.0,89.0 L7.0,93.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M16.0,-84.0 L11.0,-89.0 L7.0,-93.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M11.0,89.0 L7.0,93.0 L0.0,100.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M11.0,-89.0 L7.0,-93.0 L0.0,-100.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M-50.0,50.0 L-49.0,51.0 L-32.0,68.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M-50.0,-50.0 L-49.0,-51.0 L-32.0,-68.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M-49.0,51.0 L-32.0,68.0 L-22.082806968791672,71.15886299504099" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M-49.0,-51.0 L-32.0,-68.0 L-22.082806968791672,-71.15886299504099" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M-32.0,-32.0 L-28.84113700495901,-22.082806968791672 L-24.0,-24.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M-32.0,32.0 L-28.84113700495901,22.082806968791672 L-24.0,24.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M-22.082806968791672,71.15886299504099 L-24.0,76.0 L-22.0,78.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M-22.082806968791672,-71.15886299504099 L-24.0,-76.0 L-22.0,-78.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M-24.0,76.0 L-22.0,78.0 L-16.0,84.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M-24.0,-76.0 L-22.0,-78.0 L-16.0,-84.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M-22.0,78.0 L-16.0,84.0 L-11.0,89.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M-22.0,-78.0 L-16.0,-84.0 L-11.0,-89.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M-16.0,84.0 L-11.0,89.0 L-7.0,93.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M-16.0,-84.0 L-11.0,-89.0 L-7.0,-93.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M-11.0,89.0 L-7.0,93.0 L0.0,100.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M-11.0,-89.0 L-7.0,-93.0 L0.0,-100.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M50.0,50.0 L51.0,49.0 L68.0,32.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M50.0,-50.0 L51.0,-49.0 L68.0,-32.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M51.0,49.0 L68.0,32.0 L71.15886299504099,22.082806968791672" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M51.0,-49.0 L68.0,-32.0 L71.15886299504099,-22.082806968791672" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M68.0,32.0 L71.15886299504099,22.082806968791672 L76.0,24.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M68.0,-32.0 L71.15886299504099,-22.082806968791672 L76.0,-24.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M71.15886299504099,22.082806968791672 L76.0,24.0 L78.0,22.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M71.15886299504099,-22.082806968791672 L76.0,-24.0 L78.0,-22.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M76.0,24.0 L78.0,22.0 L84.0,16.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M76.0,-24.0 L78.0,-22.0 L84.0,-16.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M78.0,22.0 L84.0,16.0 L89.0,11.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M78.0,-22.0 L84.0,-16.0 L89.0,-11.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M84.0,16.0 L89.0,11.0 L93.0,7.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M84.0,-16.0 L89.0,-11.0 L93.0,-7.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M89.0,11.0 L93.0,7.0 L100.0,-0.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M89.0,-11.0 L93.0,-7.0 L100.0,-0.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M32.0,-32.0 L22.082806968791672,-28.84113700495901 L24.0,-24.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M32.0,32.0 L22.082806968791672,28.84113700495901 L24.0,24.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M32.0,68.0 L22.082806968791672,71.15886299504099 L24.0,76.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M32.0,-68.0 L22.082806968791672,-71.15886299504099 L24.0,-76.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M-32.0,68.0 L-22.082806968791672,71.15886299504099 L-24.0,76.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M-32.0,-32.0 L-22.082806968791672,-28.84113700495901 L-24.0,-24.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M-32.0,32.0 L-22.082806968791672,28.84113700495901 L-24.0,24.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M-32.0,-68.0 L-22.082806968791672,-71.15886299504099 L-24.0,-76.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M-50.0,-50.0 L-51.0,-49.0 L-68.0,-32.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M-50.0,50.0 L-51.0,49.0 L-68.0,32.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M-51.0,-49.0 L-68.0,-32.0 L-71.15886299504099,-22.082806968791672" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M-51.0,49.0 L-68.0,32.0 L-71.15886299504099,22.082806968791672" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M-68.0,-32.0 L-71.15886299504099,-22.082806968791672 L-76.0,-24.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M-68.0,32.0 L-71.15886299504099,22.082806968791672 L-76.0,24.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M-71.15886299504099,-22.082806968791672 L-76.0,-24.0 L-78.0,-22.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M-71.15886299504099,22.082806968791672 L-76.0,24.0 L-78.0,22.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M-76.0,-24.0 L-78.0,-22.0 L-84.0,-16.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M-76.0,24.0 L-78.0,22.0 L-84.0,16.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M-78.0,-22.0 L-84.0,-16.0 L-89.0,-11.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M-78.0,22.0 L-84.0,16.0 L-89.0,11.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M-84.0,-16.0 L-89.0,-11.0 L-93.0,-7.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M-84.0,16.0 L-89.0,11.0 L-93.0,7.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M-89.0,-11.0 L-93.0,-7.0 L-100.0,-0.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M-89.0,11.0 L-93.0,7.0 L-100.0,-0.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<circle cx="0" cy="-97" r="8" stroke-dasharray="39.653880605311166 10.611601852125524" stroke-dashoffset="-17.59291886010284" stroke="black" stroke-width="1" fill="white" fill-opacity="1" />
+<circle cx="0" cy="-97" r="4" stroke="black" stroke-width="1" fill="white" fill-opacity="1" />
+</svg>

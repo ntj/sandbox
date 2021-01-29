@@ -262,15 +262,16 @@ if __name__ == "__main__":
             myFile.write(
                 '<img src="img/star{0}.gif" width="250" /></a>'.format(i))
         myFile.write('<br /><br />')
+        saveNames = []
 
         for g in range(nrGifs):
             print("Create stars run {0}".format(g))
             nrStars = 10
             nrPoints = random.randint(1, 20)
             nrPointsLine = random.randint(3, 8)
-            treshold = random.randint(3, 20)
+            threshold = random.randint(3, 20)
             myFile.write('<br />Konfiguration {0}, Parameter: {1}-{2}-{3}&nbsp;<a href="#start">zurück</a><br />'.format(
-                g, nrPoints, nrPointsLine, treshold))
+                g, nrPoints, nrPointsLine, threshold))
             myFile.write('<table>')
             myFile.write('<tr><a name="{0}"></tr>'.format(g))
             myFile.write('<tr><td>')
@@ -282,9 +283,9 @@ if __name__ == "__main__":
                 star2 = draw.Drawing(
                     250, 250, origin='center', displayInline=False)
                 name = '-{0}-{1}-{2}-{3}-{4}.svg'.format(g, i,
-                                                         nrPoints, nrPointsLine, treshold)
+                                                         nrPoints, nrPointsLine, threshold)
                 createPolygon(nrPoints, nrPointsLine,
-                              treshold, name)
+                              threshold, name)
                 arc = draw.ArcLine(0, 97, 8, -50, 234, stroke='black',
                                    stroke_width=1, fill='white', fill_opacity=1)
                 circle = draw.Circle(
@@ -294,13 +295,20 @@ if __name__ == "__main__":
                 polygon.saveSvg('img/polygon' + name)
                 star1.saveSvg('img/star1' + name)
                 star2.saveSvg('img/star2' + name)
+                if nrPoints + nrPointsLine + threshold > 36:
+                    saveNames.append(name)
+
                 myFile.write('<img src="img/star1-{0}-{1}-{2}-{3}-{4}.svg" width="250"><img src="img/star2-{0}-{1}-{2}-{3}-{4}.svg" width="250">'.format(
-                    g, i, nrPoints, nrPointsLine, treshold))
+                    g, i, nrPoints, nrPointsLine, threshold))
                 myFile.write('</td></tr>\n')
             myFile.write('</table><br />\n')
 
         myFile.write('</body>\n')
         myFile.write('</html>')
+    print(len(saveNames))
+    for i, name in enumerate(saveNames):
+        os.system(
+            'cp img/star2{0} img/star2-{1}.svg'.format(name, i))
 
     for g in range(nrGifs):
         os.system(
