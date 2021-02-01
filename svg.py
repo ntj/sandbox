@@ -295,7 +295,7 @@ if __name__ == "__main__":
                 polygon.saveSvg('img/polygon' + name)
                 star1.saveSvg('img/star1' + name)
                 star2.saveSvg('img/star2' + name)
-                if nrPoints + nrPointsLine + threshold > 36:
+                if nrPoints > 3:
                     saveNames.append(name)
 
                 myFile.write('<img src="img/star1-{0}-{1}-{2}-{3}-{4}.svg" width="250"><img src="img/star2-{0}-{1}-{2}-{3}-{4}.svg" width="250">'.format(
@@ -306,10 +306,12 @@ if __name__ == "__main__":
         myFile.write('</body>\n')
         myFile.write('</html>')
     print(len(saveNames))
-    for i, name in enumerate(saveNames):
+    for i, name in enumerate(saveNames[:10]):
         os.system(
             'cp img/star2{0} img/star2-{1}.svg'.format(name, i))
-
-    for g in range(nrGifs):
         os.system(
-            'convert -delay 110 -loop 0 -density 200 img/star2-{0}-*.svg img/star{0}.gif'.format(g))
+            'cp img/polygon{0} img/polygon-{1}.svg'.format(name, i))
+
+for g in range(nrGifs):
+    os.system(
+        'convert -delay 110 -loop 0 -density 200 img/star2-{0}-*.svg img/star{0}.gif'.format(g))
