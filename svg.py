@@ -311,6 +311,8 @@ if __name__ == "__main__":
             'cp img/star2{0} img/star2-{1}.svg'.format(name, i))
         os.system(
             'cp img/polygon{0} img/polygon-{1}.svg'.format(name, i))
+        os.system(
+            'cp img/polygon{0} img/star1-{1}.svg'.format(name, i))
 
 for g in range(nrGifs):
     os.system(
