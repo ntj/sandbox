@@ -314,6 +314,9 @@ if __name__ == "__main__":
         os.system(
             'cp img/star1{0} img/star1-{1}.svg'.format(name, i))
 
+delay = [90, 100, 110, 120]
 for g in range(nrGifs):
+    index = random.randint(0, 3)
+    d = delay[index]
     os.system(
-        'convert -delay 110 -loop 0 -density 200 img/star2-{0}-*.svg img/star{0}.gif'.format(g))
+        'convert -delay {1} -loop 0 -density 200 img/star2-{0}-*.svg img/star{0}.gif'.format(g, d))
