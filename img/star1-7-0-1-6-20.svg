@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="250" height="250" viewBox="-125.0 -125.0 250 250">
+<defs>
+</defs>
+<path d="M45.0,55.0 L26.0,74.0 L23.0,77.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M45.0,-55.0 L26.0,-74.0 L23.0,-77.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M26.0,74.0 L23.0,77.0 L14.0,86.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M26.0,-74.0 L23.0,-77.0 L14.0,-86.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M23.0,77.0 L14.0,86.0 L2.0,98.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M23.0,-77.0 L14.0,-86.0 L2.0,-98.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M14.0,86.0 L2.0,98.0 L0.6001354534296748,98.10547840317531" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M14.0,-86.0 L2.0,-98.0 L0.6001354534296748,-98.10547840317531" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M2.0,-2.0 L1.8945215968246831,-0.6001354534296748 L0.0,-0.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M2.0,2.0 L1.8945215968246831,0.6001354534296748 L0.0,-0.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M-45.0,55.0 L-26.0,74.0 L-23.0,77.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M-45.0,-55.0 L-26.0,-74.0 L-23.0,-77.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M-26.0,74.0 L-23.0,77.0 L-14.0,86.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M-26.0,-74.0 L-23.0,-77.0 L-14.0,-86.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M-23.0,77.0 L-14.0,86.0 L-2.0,98.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M-23.0,-77.0 L-14.0,-86.0 L-2.0,-98.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M-14.0,86.0 L-2.0,98.0 L-0.6001354534296748,98.10547840317531" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M-14.0,-86.0 L-2.0,-98.0 L-0.6001354534296748,-98.10547840317531" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M-2.0,-2.0 L-1.8945215968246831,-0.6001354534296748 L0.0,-0.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M-2.0,2.0 L-1.8945215968246831,0.6001354534296748 L0.0,-0.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M55.0,45.0 L74.0,26.0 L77.0,23.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M55.0,-45.0 L74.0,-26.0 L77.0,-23.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M74.0,26.0 L77.0,23.0 L86.0,14.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M74.0,-26.0 L77.0,-23.0 L86.0,-14.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M77.0,23.0 L86.0,14.0 L98.0,2.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M77.0,-23.0 L86.0,-14.0 L98.0,-2.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M86.0,14.0 L98.0,2.0 L98.10547840317531,0.6001354534296748" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M86.0,-14.0 L98.0,-2.0 L98.10547840317531,-0.6001354534296748" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M98.0,2.0 L98.10547840317531,0.6001354534296748 L100.0,-0.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M98.0,-2.0 L98.10547840317531,-0.6001354534296748 L100.0,-0.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M2.0,-2.0 L0.6001354534296748,-1.8945215968246831 L0.0,-0.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M2.0,2.0 L0.6001354534296748,1.8945215968246831 L0.0,-0.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M2.0,98.0 L0.6001354534296748,98.10547840317531 L0.0,100.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M2.0,-98.0 L0.6001354534296748,-98.10547840317531 L0.0,-100.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M-2.0,98.0 L-0.6001354534296748,98.10547840317531 L0.0,100.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M-2.0,-2.0 L-0.6001354534296748,-1.8945215968246831 L0.0,-0.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M-2.0,2.0 L-0.6001354534296748,1.8945215968246885 L0.0,-0.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M-2.0,-98.0 L-0.6001354534296748,-98.10547840317531 L0.0,-100.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M-55.0,-45.0 L-74.0,-26.0 L-77.0,-23.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M-55.0,45.0 L-74.0,26.0 L-77.0,23.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M-74.0,-26.0 L-77.0,-23.0 L-86.0,-14.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M-74.0,26.0 L-77.0,23.0 L-86.0,14.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M-77.0,-23.0 L-86.0,-14.0 L-98.0,-2.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M-77.0,23.0 L-86.0,14.0 L-98.0,2.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M-86.0,-14.0 L-98.0,-2.0 L-98.10547840317531,-0.6001354534296748" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M-86.0,14.0 L-98.0,2.0 L-98.10547840317531,0.6001354534296748" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M-98.0,-2.0 L-98.10547840317531,-0.6001354534296748 L-100.0,-0.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<path d="M-98.0,2.0 L-98.10547840317531,0.6001354534296748 L-100.0,-0.0" fill-opacity="0" stroke="black" stroke-width="1" />
+<circle cx="0" cy="-97" r="8" stroke-dasharray="39.653880605311166 10.611601852125524" stroke-dashoffset="-17.59291886010284" stroke="black" stroke-width="1" fill="white" fill-opacity="1" />
+<circle cx="0" cy="-97" r="4" stroke="black" stroke-width="1" fill="white" fill-opacity="1" />
+</svg>
